@@ -26,7 +26,6 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     // It is a terrible code. Sorry for hard work to read the code.
     if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, Data + 6) == HAL_OK)
     {
-
         can_process(&RxHeader, Data);
     }
 }

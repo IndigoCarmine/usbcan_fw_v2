@@ -5,7 +5,10 @@
 extern "C"
 {
 #endif
-    inline void cobs_encode(const uint8_t data[], uint8_t return_data[], int data_size)
+#ifndef __cplusplus
+	extern inline void cobs_encode(const uint8_t data[], uint8_t return_data[], int data_size);
+#endif
+	inline void cobs_encode(const uint8_t data[], uint8_t return_data[], int data_size)
     {
         int zero_index = data_size + 1; // this is return_data index
         return_data[zero_index] = 0x00;
@@ -26,7 +29,10 @@ extern "C"
     // Consistent Overhead Byte Suffiing
     // data_size is data array size
     // return data array size should be data_size - 2
-    inline void cobs_decode(const uint8_t data[], uint8_t return_data[], int data_size)
+#ifndef __cplusplus
+	extern inline void cobs_decode(const uint8_t data[], uint8_t return_data[], int data_size);
+#endif
+	inline void cobs_decode(const uint8_t data[], uint8_t return_data[], int data_size)
     {
         uint8_t zero_index = data[0];
         // i is data index

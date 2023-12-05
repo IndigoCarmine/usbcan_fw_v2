@@ -2,6 +2,7 @@
     "files.associations": {
         "tuple": "cpp",
         "usbd_cdc_if.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "cobs.h": "c"
     }
 }
